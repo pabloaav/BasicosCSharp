@@ -2,16 +2,11 @@
 {
    private double _radio;
 
+   // expresión de cuerpo de método (expression-bodied member)
    public double Radio
    {
-      get { return _radio; }
-      set
-      {
-         if (value >= 0)
-            _radio = value;
-         else
-            throw new ArgumentException("El radio no puede ser negativo");
-      }
+      get => _radio;
+      set => _radio = value > 0 ? value : throw new ArgumentException("El radio no puede ser negativo");
    }
 
    public Circulo(double radio)
